@@ -1,6 +1,7 @@
 package org.superbiz.moviefun;
 
 import org.junit.Test;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -16,7 +17,7 @@ public class SmokeTest {
 
         assertThat(homePage, containsString("Please select one of the following links:"));
 
-        String setupPage = restTemplate.getForObject(url("/setup.jsp"), String.class);
+        String setupPage = restTemplate.getForObject(url("/setup"), String.class);
 
         assertThat(setupPage, containsString("Wedding Crashers"));
         assertThat(setupPage, containsString("Starsky & Hutch"));
