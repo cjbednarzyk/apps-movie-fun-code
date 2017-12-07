@@ -31,7 +31,7 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/setup")
+    @GetMapping("/setup*")
     public String setup(Map<String, Object> model) {
         for (Movie movie : movieFixtures.load()) {
             moviesBean.addMovie(movie);
